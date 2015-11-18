@@ -1,0 +1,28 @@
+----Hur omvandlar man en int till en float?----
+
+Svar: Med hjälp av typecasting t.ex:
+
+int heltal = 20;
+float flyttal = (float)heltal;
+
+----Vad var enkelt respektive svårt i den här laborationen?----
+
+Svar: Den laborationen var inte särskilt svår. Det som tog längst tid var
+uppgift till min överraskning uppgift 8. Att få rätt på villkoren så
+att mina if-satser avgjorde skottåren eller inte. Men sedan allmänt 
+försöker jag ta in nya aspekter i min kod som gör att jag tvingas lära
+mig. Uppgift 10 var enkel att lösa men jag tog mig tiden att försöka skriva
+ett program som var bättre optimerat. Det slutade med en program som jag
+är stolt över, även om programmets funktioner inte var särskilt utmanande.
+ 
+----Skriv ett villkor som är sant för alla tal mellan 70 och 195----
+
+Svar:
+int x;
+x <= 195 && x >= 70
+
+----Skriv ett villkor för det omvända intervallet-----
+Svar:
+int x;
+x <= 70 || x >= 195
+	

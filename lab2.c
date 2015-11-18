@@ -1,70 +1,35 @@
 #include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
 
-struct persons		// Struct for person
-	{				// Medlemmar
-		float weight;
-		float length;
-	};
 
-struct persons *pr;	// struktpekare 
 
-/* variabler för att hålla totalvärden*/
-float totWeight;	
-float totLength;
-float totBMI;
+int main(){
 
-/*skapar nya objekt av struketen*/
-int persAdd (int amountofpeople){
-	/*sätter minne med storleken av vår struct */
-	pr = (struct persons*) malloc(amountofpeople*sizeof(struct persons));
-
-	int i;
-	for (int i = 1; i <= amountofpeople; i++)
-	{
-		/* fyller objekt med värden */
-		printf("Struct för person%d skapas..\n", i);
-		getchar();
-		printf("Ange vikt (KG): ");
-		scanf("%f", &pr[i].weight);
-		printf("Ange längd (M): ");
-		scanf("%f", &pr[i].length);
-
-		/* sparar indiviuella värden i totalvariabel */
-		totWeight += pr[i].weight;
-		totLength += pr[i].length;
-		totBMI += pr[i].weight/pow(pr[i].length,2);
-		printf("person%d = %.2f KG, %.2f M, %.2f BMI\n",i, pr[i].weight, pr[i].length, pr[i].weight)/(pow(pr[i].length,2));
-	}
-		return 0;
-}
-
-int main(void){
-	int amountofpeople = 0;
-	printf("Benämn antal personer i beräkning:");
-	scanf("%d", &amountofpeople);
-
-	/* genererar objekt */
-	persAdd(amountofpeople);
-	int i;
+	char from[32],to[32], date[32], where[32];
 	
-	printf("total weight = %.2f\n",totWeight); 
-	printf("average weight = %.2f\n", totWeight/amountofpeople); 
-	printf("total length = %.2f\n",totLength); 
-	printf("average length = %.2f\n", totLength/amountofpeople);
-	printf("total BMI = %.2f\n", totBMI); 
-	printf("average BMI = %.2f\n", totBMI/amountofpeople);
-	
-	/* frisätter pekare */
-	if (pr){ 
-		free(pr);
-	}
+
+	float time = 0;
+	float  duration = 0;
+	printf("Who is this invitation from:");
+	scanf("%[^\n]s",from);
 	getchar();
-
-	return 0;
+	printf("Who is this invitation to:");
+	scanf("%[^\n]s",to);
+	getchar();
+	printf("Date:");
+	scanf("%[^\n]s",date);
+	getchar();
+	printf("Start time:");
+	scanf("%f",&time);
+	printf("Duration (h):");
+	scanf("%f",&duration);
+	getchar();
+	printf("Where:");
+	scanf("%[^\n]s",where);
+	getchar();
+	printf("Hello %s!\n", to);
+	printf("You are invited to a party the %s at %05.2f in %s.\n",date, time, where);
+	float until = (int)(time + duration) % 24;
+	printf("The party last until %05.2f!", until);
+	printf("\nSee you there\n%s\n", from);
+return 0;
 }
-
-
-
-

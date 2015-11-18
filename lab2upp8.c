@@ -15,12 +15,10 @@ int main (void){
 
 	if(!(input % 4)){
 		if(!(input % 100) && ((input % 400) > 0)){
-			printf("Nej, %d var int ett skottår0.\n", input);
+			printf("Nej, %d var inte ett skottår.\n", input);
+			return 0;
 		}
-		printf("Yes, %d var ett skottår1.\n", input);
-	}
-	else if(!(input % 400) && !(input % 100)){
-		printf("Yes, %d var ett skottår2.\n", input);
+		printf("Yes, %d var ett skottår.\n", input);
 	}
 	else
 		printf("Nej, %d var inte ett skottår.\n", input);
