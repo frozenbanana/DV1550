@@ -11,7 +11,7 @@ c) Alla jämna tal mellan 0 och 30. (Tips! Kan göras med hjälp av % -operatorn
 d) Summera alla heltal mellan 37 och 149, och presentera resultatet.
 e) Summera alla heltal i ett intervall som användaren anger gränserna för
 
-*/
+
 int main(){
 int i=0;
 int j=0;
@@ -37,4 +37,25 @@ if((b+g) != i ||(b+g)!= j)
 
 printf("tot: %d\n", tot);
 
+}
+*/
+
+int main(){
+	int i=0;
+	int j=0;
+	int tot=0;
+        
+	printf("Ange i: ");
+	scanf("%d",&i);
+	getchar();
+	printf("Ange j: ");
+	scanf("%d",&j);
+	
+	int max = (((float)(i+j))/2) + ((float)(abs(i-j))/2); 
+	int min = (((float)(i+j))/2) - ((float)(abs(i-j))/2); 
+	
+	for(min;min<=max;min++)
+		tot += min;
+
+	printf("Totalt: %d\n",tot);	
 }
