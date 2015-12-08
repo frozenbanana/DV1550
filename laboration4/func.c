@@ -1,4 +1,6 @@
 #include "func.h"
+#include <stdlib.h>
+#include <math.h>
 #include <string.h>
 /* Changes places on the first and last, second and second last..etc of any string */
 void reverse(char * array, int numberOfChars){
@@ -28,3 +30,28 @@ double meanOfPositives(double * array, int length){
 
     return average;
 }                    
+int isPermutation(int nrA, int nrB){
+	int i;
+	int sizeA = (int)log10(nrA) + 1;
+	int sizeB = (int)log10(nrB) + 1;
+	if (sizeA != sizeB)
+		return 0;
+	int *numArrayA = (int*)calloc(10, sizeof(int));
+	int *numArrayB = (int*)calloc(10, sizeof(int));
+
+	for (i = 0; i <= sizeA; i++){
+		numArrayA[nrA % 10]++;
+		numArrayB[nrB % 10]++;
+		nrA /= 10;
+		nrB /= 10;
+	}
+
+	for (i = 0; i < 10; i++){
+		if (numArrayA[i] != numArrayB[i])
+			return 0;
+	}
+	free(numArrayA);
+	free(numArrayB);
+	return 1;
+
+}
