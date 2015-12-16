@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+/*
+ *Skriv en funktion som räknar ut medelvärdet av alla positiva tal i en array. Funktionen tar emot en array med decimaltal och ett heltal som anger hur många decimaltal som finns i
+ arrayen. Funktionen beräknar och returnerar medelvärdet av alla positiva tal i arrayen. Ett positivt tal är ett tal som är strikt större än talet noll ( 0). Tänk på att om inget positivt tal finns i arrayen ska funktionen returnera 0
+ .
+ * */
+
+int main(){
+ double array[5];
+ int i = 0;
+    printf("Add 5(0-4) float numbers to array: \n");
+    while(i < 5){
+    printf("Index %d: ", i);
+    scanf("%lf",&array[i]);
+    i++;
+    }
+
+    printf("Average is: %5.2f \n", meanOfPositive(array, sizeof(array)/sizeof(double)));
+}

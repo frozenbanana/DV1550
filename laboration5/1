@@ -1,0 +1,66 @@
+  int i;
+    for(i=0;i<CARDSIZE;i++){
+        printf("Card number %d: ",i+1);
+       switch(anyDeck[i].cardValue){
+           case 0:
+                printf("ACE OF ");
+            break;
+           case 1:
+                printf("TWO OF ");
+            break;
+           case 2:
+                printf("THREE OF ");
+            break;
+           case 3:
+                printf("FOUR OF ");
+            break;
+           case 4:
+                printf("FIVE OF ");
+            break;
+           case 5:
+                printf("SIX OF ");
+            break;
+           case 6:
+                printf("SEVEN OF ");
+            break;
+           case 7:
+                printf("EIGHT OF ");
+            break;
+           case 8:
+                printf("NINE OF ");
+            break;
+           case 9:
+                printf("TEN OF ");
+            break;
+           case 10:
+                printf("JACK OF ");
+            break;
+           case 11:
+                printf("QUEEN OF ");
+            break;
+           case 12:
+                printf("KING OF ");
+            break;
+           default:
+                printf("ERROR");
+            break;
+       }
+       switch(anyDeck[i].cardSuit){
+           case 0:
+                printf("CLUBS\n");
+            break;
+           case 1:
+                printf("SPADES\n");
+            break;
+           case 2:
+                printf("DIAMONDS\n");
+            break;
+           case 3:
+                printf("HEARTS\n");
+            break;
+           default: 
+                printf("SUIT ERROR\n");
+            break;
+       }
+    }        
+

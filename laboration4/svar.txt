@@ -1,0 +1,57 @@
+1. Vad är skillnaden mellan call-by-reference, call- by-value. Ge gärna exem-
+pel.
+
+Svar: call-by-reference betyder att du använder adressen till en minnesluc
+ka där det finns ett värde. call-by-value betyder att du använder värdet 
+finns i minnesluckan.
+t.ex om du ska använda call-by-reference till en adderings funktion:
+
+int a = 5;      
+int b = 10;     
+addNum(&a,%b); //nu skickar jag in minnesadresserna
+
+om jag ska använda call-by-value:
+
+int a = 5;
+int b = 10;
+
+addNum(a,b); //nu skickar jag in värdena som finns i minnet.
+
+2. Vad är funktionsdeklaration? Ge gärna exempel.
+
+Svar: Det är när du specificerar att existesen av en funktion
+för kompilatorn. Detta krävs när man har valt att definiera 
+funktionen efter main. T.ex:
+
+int addNum(int *a, int *b);
+
+int main(){
+  
+    KODKOD
+}
+
+int addNum(int *a, int *b){ // detta är funktionsdefinitionen
+    int c;
+    c = *a + *b; 
+
+    return c;
+}
+
+3. Vad är funktionsdefinition? Ge gärna exempel
+
+Svar: Som namnet antyder är en funktionsdefinition en
+definition hur funktion fungerar. Se ovan (addNum) för att
+se ett exempel.
+
+4. Vad är syftet med att använda pre-processordiriktivet (#ifnde)
+i header-filer? Ge gärna exempel
+
+Svar: Det är ett sätt att säkerställa att kompilatorn inte 
+inkluderar header-filer mer än en gång.
+Exempel:
+#ifndef func_h_
+#define func_h_
+
+int addNum(int * a, int * b);
+
+#endif

@@ -1,0 +1,13 @@
+1. Vad är skillnaden mellan förtestad och eftertestad loop?
+Svar: Att villkoret testas antingen före eller efter kodblocket
+
+2. Varför bör break; i allmänhet inte användas för att bryta en loop?
+Svar: Det anses säkrare att bara ha en ingång och utgång i en loop. Att
+introducera break i en iteration ger fler utgångar i loopen. Det kan
+skapa buggar och osäker kod.
+
+3. Hitta fel i koden
+Svar: Ett fel finns i storleken på loopen. Numbers har 5(index 0-4) minnesluckor 
+som kan fyllas med element + ett NULL-tecken(index 5) för att avsluta. I loopen
+kommer an tilldela index 5 värdet 17 istället för NULL. Det kommer printar ut 17,
+6 gånger.

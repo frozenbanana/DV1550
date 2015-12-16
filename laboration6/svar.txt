@@ -1,0 +1,9 @@
+1.Vad är det för skillnad mellan statisk och dynamisk länkning?
+Svar: Statisk länkning betyder att biblioteken som krävs sammanvävs i samma exe/bin fil
+    innan programmet körs. Dynamisk så gör det inte det utan med hjälp biblioteken kallas
+    på efterhand som de behövs.
+2. Nämn någon fördel och någon nackdel med dynamisk länkning jämfört
+  med statisk.
+Svar: Statisk länkning tar mer minne men programmet går mycket snabbare. Dynamisk länkning
+    tar mindre minne men programmet går långsammare eftersom det går åt beräkningskraft för
+    att kalla på biblioteken varje gång som de behövs.
