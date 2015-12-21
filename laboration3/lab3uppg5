@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+/*
+ *Uppgift 5 delbarhet 1
+ Skriv ett program som summerar alla heltal under
+ 2000 som är jämt delbara med 3 eller 7.
+ */
+
+int divAbleX(int tal, int div1, int div2){
+    int tot = 0;
+    for(int i=1;i<=tal;i++)
+        !(i % div1 || i % div2) ? tot += i: tot;
+
+    return tot;
+}
+
+int main(){
+    int tal = 0;
+    int div1 = 0;
+    int div2 = 0;
+    printf("Vilket tal:");
+    scanf("%d",&tal);
+    printf("Vilken delare:");
+    scanf("%d",&div1);
+    printf("En till delare:");
+    scanf("%d",&div2);
+
+    printf("Totalt: %d \n", divAbleX(tal, div1, div2));
+    return 0;
+}

@@ -16,14 +16,12 @@ int j = strlen(array) - 1;
     }                                   // and so on until i<j
 }
 /* returns the average of positive numbers in an array els return 0  */
-double meanOfPositives(double * array, int length){
+double meanOfPositive(double * array, int length){
 
     int i;
     double sum = 0, average;
 
     for(i = 0; i < length; i++){
-        if(array[i] < 0)
-            return 0;
         sum += array[i];
     }
     average = sum / length;
@@ -34,8 +32,6 @@ int isPermutation(int nrA, int nrB){
 	int i;
 	int sizeA = (int)log10(nrA) + 1;
 	int sizeB = (int)log10(nrB) + 1;
-	if (sizeA != sizeB)
-		return 0;
 	int *numArrayA = (int*)calloc(10, sizeof(int));
 	int *numArrayB = (int*)calloc(10, sizeof(int));
 
@@ -52,6 +48,5 @@ int isPermutation(int nrA, int nrB){
 	}
 	free(numArrayA);
 	free(numArrayB);
-	return 1;
 
 }

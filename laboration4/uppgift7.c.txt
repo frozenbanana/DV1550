@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "func.h"
 
 /*
  *Skriv en funktion som räknar ut medelvärdet av alla positiva tal i en array. Funktionen tar emot en array med decimaltal och ett heltal som anger hur många decimaltal som finns i
