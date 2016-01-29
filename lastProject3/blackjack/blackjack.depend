@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1450988153 source:/home/imb/Programming/DV1550/lastProject2/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"myblackjack.h"
+
+1450913744 /home/imb/Programming/DV1550/lastProject2/myblackjack.h
+
+1450984777 source:/home/imb/Programming/DV1550/lastProject2/blackjack/main.c
+	<stdio.h>
+	<stdlib.h>
+
+1450987516 source:/home/imb/Programming/DV1550/lastProject2/myblackjack.c
+	"myblackjack.h"
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<time.h>
+

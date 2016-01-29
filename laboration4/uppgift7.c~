@@ -19,5 +19,5 @@ int main(){
     i++;
     }
 
-    printf("Average is: %5.2f \n", meanOfPositive(array, sizeof(array)/sizeof(double)));
+    printf("Average of all positive numbers are: %5.2f \n", meanOfPositive(array, sizeof(array)/sizeof(double)));
 }

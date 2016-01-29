@@ -18,13 +18,17 @@ int j = strlen(array) - 1;
 /* returns the average of positive numbers in an array els return 0  */
 double meanOfPositive(double * array, int length){
 
-    int i;
-    double sum = 0, average;
-
+    int i, div = 0;
+    double sum = 0, average = 0;
     for(i = 0; i < length; i++){
+      if(array[i] > 0){
         sum += array[i];
+        div++;
+      }
     }
-    average = sum / length;
+    average = sum /(double)div;
+    if(sum == 0)
+      average = 0;
 
     return average;
 }                    

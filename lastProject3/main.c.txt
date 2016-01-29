@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include "myblackjack.h"
-
 #define DECKSIZE 52
 
 struct card;
 struct player;
+
 int main(void){
   printf("WELCOME TO HENRYS BLACKJACK\n"); 
   //player1
@@ -32,44 +32,39 @@ int main(void){
   comp.cardValue = 0;
   comp.startCards = 1;
 
+  int cardCounter = 0;
   struct card *deck = NULL;
-  int deckCount = 0;
-  //struct card *usedDeck = NULL;
-  //usedDeck = (struct card*)calloc(DECKSIZE,sizeof(struct card));
   deck = createDeck(deck);    // deck created
-  shuffleDeck(deck);   // deck shuffled
+  int i;
+  for(i=0; i<20; i++)
+    shuffleDeck(deck);   // deck shuffled
   
   /* Name giving and first cards dealing  */
   printf("\n\nHand of %s:\n", player1.name);
-  dealCards(player1.playerHand, deck, &deckCount, &player1.startCards);
+  dealCards(&player1, deck, &cardCounter);
   printCards(player1.playerHand, player1.startCards);
-  
   printf("\n\nHand of %s: \n", player2.name);
-  dealCards(player2.playerHand, deck, &deckCount, &player2.startCards);
+  dealCards(&player2, deck, &cardCounter);
   printCards(player2.playerHand, player2.startCards);
-  
   printf("\n\nHand of %s: \n", comp.name);
-  dealCards(comp.playerHand, deck, &deckCount, &comp.startCards);
+  dealCards(&comp, deck, &cardCounter);
   printCards(comp.playerHand, comp.startCards);
- 
 
-  /* Hit or stay phase  */
+ printf("-------------------Press Enter------------------------\n");
+ getchar(); // PAUSE
+  
+  /* Hit or stay face  */
+   player1.cardValue  = actDealer(player1,deck, &cardCounter,21);    // every players cardValue is updated & saved
+ printf("-------------------Press Enter------------------------\n");
+ getchar(); // PAUSE
+   player2.cardValue  = actDealer(player2,deck, &cardCounter,21);   
+ printf("-------------------Press Enter------------------------\n");
+ getchar(); // PAUSE
+   comp.cardValue  = actDealer(comp,deck,&cardCounter,17); 
  printf("------------------------------------------------------\n");
- player1.cardValue = actDealer(player1,deck, &deckCount,22);
- printf("------------------------------------------------------\n");
- player2.cardValue = actDealer(player2,deck, &deckCount,22);
- printf("------------------------------------------------------\n");
-    if(player1.cardValue  == -1 && player2.cardValue == -1){  // if both loses bank does not have to continue
-        printf("Both players lost!\n");
-        printf("--------------------Game-finished---------------------\n");
-        goto masteJagKompletteraNufragetecken;
-    }
- comp.cardValue = actDealer(comp,deck,deckCount,17); 
- printf("------------------------------------------------------\n");
- whoWon(player1, player2, comp);   
+ whoWon(player1, player2, comp);                                    // to be compared by this function
  printf("--------------------Game-finished---------------------\n");
 
-masteJagKompletteraNufragetecken:
 /* Freeing memory */
 free(deck);
 free(player1.playerHand);

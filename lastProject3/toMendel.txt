@@ -1,0 +1,29 @@
+assignment makes integer from pointer without a cast
+
+
+void whoWon(int *comVal, int *play1Val, int *play2Val){
+  int* list[2]; // list of pointers to each hand value
+  int* listRefined; // values that are not lost 
+  int i = 0;
+  int j = 0;
+  int sizeCounter = 0;
+
+   list[0] = comVal;
+   list[1] = play1Val;
+   list[2] = play2Val;
+  for(;i<2;i++){    // this loop determens how big the refinedlist has to be
+    if(*list[i] < 22)
+      sizeCounter++;
+  }
+    listRefined = (int *)malloc((sizeof(int*)*sizeCounter));
+  for(i=0;i<2;i++){
+    if(*list[i] < 22)
+// assignment makes integer from pointer without a cast
+      listRefined[j++] = list[i]; 
+
+  }
+
+  for(i=j;i>=0;i++)
+//error: invalid type argument of unary ‘*’ (have ‘int’)
+    printf("From refined list: %d\n", *listRefined[i]);
+}
